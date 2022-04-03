@@ -45,11 +45,6 @@ public class Mogger : IMogger
         Exception? exception,
         Func<TState, Exception?, string> formatter)
     {
-        if (!IsEnabled(logLevel))
-        {
-            return;
-        }
-
         var message = formatter(state, exception);
         var lvl = logLevel switch
         {
