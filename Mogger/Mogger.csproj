@@ -16,7 +16,7 @@
         <Authors>VRoxa</Authors>
         <Description>A unit testing library for Microsoft.Logging.Extensions mocking and assertions</Description>
         <NeutralLanguage>en</NeutralLanguage>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/VRoxa/Mogger</PackageProjectUrl>
         <RepositoryUrl>https://github.com/VRoxa/Mogger</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
