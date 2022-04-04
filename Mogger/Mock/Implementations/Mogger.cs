@@ -37,7 +37,7 @@ public class Mogger : IMogger
     /// <inheritdoc/>
     public bool IsEnabled(LogLevel logLevel) => Proxied.IsEnabled(logLevel);
 
-        /// <inheritdoc/>
+    /// <inheritdoc/>
     public void Log<TState>(
         LogLevel logLevel,
         EventId eventId,
@@ -58,7 +58,15 @@ public class Mogger : IMogger
         };
 
         // TODO - Allow customized output template
-        _testOutputHelper.WriteLine($"{DateTime.Now:HH:mm:ss.fff} {lvl,-5} [{Environment.CurrentManagedThreadId,-4}]: {message}");
+        var formattedException = FormatException(exception);
+        _testOutputHelper.WriteLine($"{DateTime.Now:HH:mm:ss.fff} {lvl,-5} [{Environment.CurrentManagedThreadId,-4}]: {message}{formattedException}");
         Proxied.Log(logLevel, eventId, state, exception, formatter);
+    }
+
+    private static string FormatException(Exception? ex)
+    {
+        // IOException: File not found
+        //   at Example.MyService.Copy()
+        return $"\n{ex?.GetType()?.Name}: {ex?.Message}\n{ex?.StackTrace}".TrimEnd('\n');
     }
 }
