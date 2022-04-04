@@ -10,9 +10,9 @@
     <PropertyGroup>
         <IncludeSymbols>false</IncludeSymbols>
         <Copyright>Copyright © 2022 VRoxa. All rights reserved.</Copyright>
-        <Version>1.0.0</Version>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <Version>1.0.1</Version>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
         <Authors>VRoxa</Authors>
         <Description>A unit testing library for Microsoft.Logging.Extensions mocking and assertions</Description>
         <NeutralLanguage>en</NeutralLanguage>
